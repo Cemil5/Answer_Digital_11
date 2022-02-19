@@ -3,8 +3,8 @@ Feature:Login page
 
   Background:
     Given the user is on the Menu page
-    And the user clicks on "form authentication" link
-
+    And the user clicks on "Form Authentication" link
+  @wip
   Scenario:the user can login with valid credentials
     When the user enters valid credentials
     Then the user should be able to login

@@ -19,7 +19,8 @@ public class FormAuthenStepDefs {
     }
     @Given("the user clicks on {string} link")
     public void the_user_clicks_on_link(String FormAut) {
-        formAutPage.formAuthentLink.click();
+       // formAutPage.formAuthentLink.click();
+        formAutPage.navigate(FormAut);
 
     }
     @When("the user enters valid credentials")
@@ -34,7 +35,7 @@ public class FormAuthenStepDefs {
         BrowserUtils.waitFor(3);
         String actualText = formAutPage.getLogInMessage.getText().trim();
         System.out.println(actualText);
-        //Assert.assertEquals("You logged into a secure area!",actualText); OLMUYOR???????*********
+        Assert.assertTrue(actualText.contains("You logged into a secure area!")); //OLMUYOR???????*********
     }
 
     @When("the user logs out")
